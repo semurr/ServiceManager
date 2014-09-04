@@ -15,7 +15,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -24,7 +23,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author stephen
  * 
  */
-
 @Configuration
 @EnableTransactionManagement
 @PropertySource({ "classpath:database.properties" })
