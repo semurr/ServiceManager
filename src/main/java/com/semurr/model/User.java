@@ -7,13 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "User")
 public class User implements Serializable {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue	
 	@Column(name = "userid", unique = true, nullable = false)
 	private long	userid;
 
@@ -25,6 +26,24 @@ public class User implements Serializable {
 
 	@Column(name = "userpassword", nullable = false)
 	private String	userpassword;
+
+	@Column(name = "usersalt", unique = true, nullable = false)
+	private String	salt;
+
+	/**
+	 * @return the salt
+	 */
+	public String getSalt() {
+		return salt;
+	}
+
+	/**
+	 * @param salt
+	 *            the salt to set
+	 */
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 
 	/**
 	 * @return the userid
