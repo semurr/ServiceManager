@@ -1,6 +1,6 @@
 package com.semurr.dao;
 
-public interface BaseDAO<T> {
+public interface GenericDAO<T> {
 	
 	void add(T t);
 	void delete(T obj);

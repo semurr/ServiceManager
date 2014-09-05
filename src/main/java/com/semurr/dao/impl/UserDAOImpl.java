@@ -8,7 +8,7 @@ import com.semurr.dao.UserDAO;
 import com.semurr.model.User;
 
 @Repository
-public class UserDAOImpl extends BaseDAOImpl<User> implements UserDAO{
+public class UserDAOImpl extends GenericDAOImpl<User> implements UserDAO{
 
 	UserDAOImpl(){
 		this.setClass(User.class);		

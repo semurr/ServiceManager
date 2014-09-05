@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.semurr.dao.BaseDAO;
+import com.semurr.dao.GenericDAO;
 
 @Repository
-public class BaseDAOImpl<T> implements BaseDAO<T> {
+public class GenericDAOImpl<T> implements GenericDAO<T> {
 
 	@Autowired
 	SessionFactory		sessionFactory;
