@@ -23,12 +23,6 @@ public class UserServiceImpl extends SpringBeanAutowiringSupport implements User
 
 	@Autowired
 	UserDAO	userDao;
-	
-	@PostConstruct
-	public void init(){
-		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
-		
-	}
 
 	public User findUserById(long accountId) {
 
@@ -45,8 +39,9 @@ public class UserServiceImpl extends SpringBeanAutowiringSupport implements User
 			e.printStackTrace();
 			throw new HashException("unable to hash password for account: "
 					+ user.getUsername());
-		}		
-
+		}
+		
+		//TODO: https://jira.spring.io/browse/SPR-9786 SPringBeanAutowiring not actually autowiring
 		userDao.add(user);
 		
 		return user.getUsername();
