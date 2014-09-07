@@ -6,8 +6,10 @@ import javax.annotation.PostConstruct;
 import javax.jws.WebService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.semurr.dao.HashException;
@@ -17,8 +19,8 @@ import com.semurr.model.User;
 import com.semurr.service.UserService;
 
 
-@WebService(endpointInterface = "com.semurr.service.UserService")
 @Service
+@WebService(endpointInterface = "com.semurr.service.UserService")
 public class UserServiceImpl extends SpringBeanAutowiringSupport implements UserService{
 
 	@Autowired
@@ -39,12 +41,17 @@ public class UserServiceImpl extends SpringBeanAutowiringSupport implements User
 			e.printStackTrace();
 			throw new HashException("unable to hash password for account: "
 					+ user.getUsername());
-		}
+		}		
 		
 		//TODO: https://jira.spring.io/browse/SPR-9786 SPringBeanAutowiring not actually autowiring
 		userDao.add(user);
 		
 		return user.getUsername();
-
+	}
+	
+	public void getDAO(){
+		
+		userDao = (UserDAO) ContextLoader.getCurrentWebApplicationContext().getBean("");
+		
 	}
 }
