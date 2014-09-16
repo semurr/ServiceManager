@@ -47,11 +47,5 @@ public class UserServiceImpl extends SpringBeanAutowiringSupport implements User
 		userDao.add(user);
 		
 		return user.getUsername();
-	}
-	
-	public void getDAO(){
-		
-		userDao = (UserDAO) ContextLoader.getCurrentWebApplicationContext().getBean("");
-		
-	}
+	}	
 }
