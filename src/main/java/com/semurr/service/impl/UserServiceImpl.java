@@ -21,7 +21,7 @@ import com.semurr.service.UserService;
 
 @Service
 @WebService(endpointInterface = "com.semurr.service.UserService")
-public class UserServiceImpl extends SpringBeanAutowiringSupport implements UserService{
+public class UserServiceImpl implements UserService{
 
 	@Autowired
 	UserDAO	userDao;
