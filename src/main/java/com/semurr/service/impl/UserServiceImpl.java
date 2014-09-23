@@ -41,9 +41,8 @@ public class UserServiceImpl implements UserService{
 			e.printStackTrace();
 			throw new HashException("unable to hash password for account: "
 					+ user.getUsername());
-		}		
+		}	
 		
-		//TODO: https://jira.spring.io/browse/SPR-9786 SPringBeanAutowiring not actually autowiring
 		userDao.add(user);
 		
 		return user.getUsername();

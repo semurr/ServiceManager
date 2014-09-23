@@ -14,8 +14,10 @@
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<sql.connector.version>5.1.30</sql.connector.version>
 		<tomcat.dbcp.version>7.0.52</tomcat.dbcp.version>
+		<jaxws.spring.version>1.9</jaxws.spring.version>
 		<jaxwsrt.version>2.2.8</jaxwsrt.version>
 		<jaxwsapi.version>2.2.6</jaxwsapi.version>
+		<javax.servlet.version>3.1.0</javax.servlet.version>
 	</properties>
 
 	<build>
@@ -122,6 +124,18 @@
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-dbcp</artifactId>
 			<version>${tomcat.dbcp.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jvnet.jax-ws-commons.spring</groupId>
+			<artifactId>jaxws-spring</artifactId>
+			<version>${jaxws.spring.version}</version>
 		</dependency>
 
 	</dependencies>
