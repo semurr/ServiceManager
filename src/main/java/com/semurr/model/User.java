@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "User")
@@ -33,6 +35,7 @@ public class User implements Serializable {
 	/**
 	 * @return the salt
 	 */
+	@XmlTransient
 	public String getSalt() {
 		return salt;
 	}
@@ -48,6 +51,7 @@ public class User implements Serializable {
 	/**
 	 * @return the userid
 	 */
+	@XmlTransient
 	public long getUserid() {
 		return userid;
 	}
